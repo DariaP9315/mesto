@@ -10,6 +10,10 @@
     right: -40px;
 }
 
+.popup__close:hover {
+    opacity: 0.6;
+}
+
 @media screen and (min-width: 300px) and (max-width: 740px) {
     .popup__close {
         right: 0;

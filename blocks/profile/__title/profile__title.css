@@ -1,0 +1,11 @@
+.profile__title {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 740px) {
+    .profile__title{
+        margin-top: 22px;
+    }
+}

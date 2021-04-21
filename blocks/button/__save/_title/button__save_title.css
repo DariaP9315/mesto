@@ -1,0 +1,15 @@
+.button__save_title {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 300px) and (max-width: 740px) {
+    .button__save_title {
+        font-size: 14px;
+        line-height: 1.21;
+    }
+}

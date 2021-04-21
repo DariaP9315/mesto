@@ -5,6 +5,5 @@
     max-height: 100%;
     width: 100%;
     object-fit: cover;
-    border: 1px solid red;
     display: grid;
 }

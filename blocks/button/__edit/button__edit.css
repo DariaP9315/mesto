@@ -1,6 +1,6 @@
 .button__edit {
     border-style: none;
-    background-image: url(../../../images/button_edit.svg);
+    background: url(../../../images/button_edit.svg) no-repeat center;
     background-size: 24px 24px;
     background-color: #000;
     width: 24px;

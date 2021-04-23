@@ -1,11 +1,13 @@
 .profile__title {
     display: flex;
     flex-direction: row;
+    align-self: center;
 }
 
 
-@media screen and (min-width: 300px) and (max-width: 770px) {
+@media screen and (max-width: 770px) {
     .profile__title{
         margin-top: 22px;
+        max-width: 282px;
     }
 }

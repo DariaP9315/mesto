@@ -5,11 +5,3 @@
     align-self: center;
     
 }
-
-@media screen and (min-width: 300px) and (max-width: 770px) {
-    .profile__info {
-        display: flex;
-        flex-direction: column;
-    }
-    
-}

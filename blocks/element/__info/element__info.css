@@ -10,13 +10,3 @@
     padding-right: 15px;
     padding-left: 21px;
 }
-
-@media screen and (min-width: 300px) and (max-width: 740px) {
-    .element__info {
-    padding-top: 25px;
-    padding-bottom: 31px;
-    padding-right: 15px;
-    padding-left: 21px;
-    }
-    
-}

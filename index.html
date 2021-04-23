@@ -17,6 +17,8 @@
         <img src='./images/logo.svg' class='header__logo' alt='логотип'>
     </header>
 
+    <main class='content'>
+
     <section class='profile'>
         <div class='profile__pasport'>
             <img class='profile__avatar' src='./images/avatar.jpg' alt='аватар пользователя'>
@@ -25,7 +27,7 @@
                     <h1 class='profile__name'>Жак-Ив Кусто</h1>
                     <button type='button' class='profile__edit'></button>
                 </div>
-                <h2 class='profile__occupation'>Исследователь океана</h2>
+                <p class='profile__occupation'>Исследователь океана</p>
             </div>
         </div>
         <button type='button' class='profile__add'></button>
@@ -81,15 +83,17 @@
         </div>
     </section>
 
+    </main>
+
     <footer class='footer'>
-        <h3 class='footer__copyright'>&#169; 2021 Mesto Russia</h3>
+        <p class='footer__copyright'>&#169; 2021 Mesto Russia</p>
     </footer>
 
     <div class='popup'>
         <div class='popup__container'>
             <button type='button' class='popup__close'></button>
             <h2 class='popup__title'>Редактировать профиль</h2>
-            <form class='popup__form'>
+            <form name='popup_form' class='popup__form'>
                 <input class='popup__input popup__input_name' type="text" name="username" placeholder="Ваше имя"
                     value='Жак-Ив Кусто' required>
                 <input class='popup__input popup__input_occupation' type="text" name="occupation"

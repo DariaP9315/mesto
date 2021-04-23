@@ -1,5 +1,5 @@
 .element__title {
-    font-family: 'Inter', Arial;
+    font-family: 'Inter', Arial, sans-serif;
     color: #000;
     font-size: 24px;
     font-weight: 900;
@@ -9,4 +9,5 @@
     overflow: hidden;
     margin: 0;
     align-self: center;
+    max-width: 189px;
 }

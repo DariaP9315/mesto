@@ -27,6 +27,6 @@ function formSubmitHandler (evt) {
     profileTitle.textContent = nameInput.value
     profileSubtitle.textContent = jobInput.value
 
-    togglePopup(event)
+    togglePopup(evt)
 }
 formElement.addEventListener('submit', formSubmitHandler);

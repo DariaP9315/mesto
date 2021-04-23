@@ -11,18 +11,19 @@
     border: 2px solid #fff;
     box-sizing: border-box;
     padding: 23px 73px;
+    transition: opacity .1s linear;
+    cursor: pointer;
 }
 
 .profile__add:hover {
     opacity: 0.6;
 }
 
-@media screen and (min-width: 300px) and (max-width: 770px) {
+@media screen and (max-width: 770px) {
     .profile__add {
         max-width: 282px;
         padding: 23px 139px;
         background-size: 16px 16px;
-        max-height: 50px;
     }
 }
 

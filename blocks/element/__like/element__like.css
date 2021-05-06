@@ -10,12 +10,6 @@
     cursor: pointer;
 }
 
-/*.element__like:hover {
-    
+.element__like:hover {
     opacity: 0.5;
 }
-
-.element__like:active {
-    background: url(../../../images/like_active.svg) no-repeat center;
-    opacity: 1;
-}*/

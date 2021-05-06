@@ -34,59 +34,6 @@
         </section>
 
         <section class='elements'>
-            <!--<div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/kirill-pershin-1088404-unsplash.jpg' alt='карачаевск'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Карачаевск</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>
-
-            <div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/kirill-pershin-1404681-unsplash.jpg' alt='гора эльбрус'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Гора Эльбрус</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>
-
-            <div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/kirill-pershin-1556355-unsplash.jpg' alt='домбай'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Домбай</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>
-
-            <div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/angelica-sabina-j53--Wmum9Y-unsplash.jpeg' alt='Сочи'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Сочи</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>
-
-            <div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/philipp-trubchenko-fNiZMaX-Gc8-unsplash.jpeg' alt='иркутск'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Иркутск</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>
-
-            <div class='element'>
-                <button type='button' class='element__del'></button>
-                <img class='element__photo' src='./images/anastasiya-romanova-OD_7zz_eFks-unsplash.jpeg' alt='смоленск'>
-                <div class='element__info'>
-                    <h2 class='element__title'>Смоленск</h2>
-                    <button type='button' class='element__like'></button>
-                </div>
-            </div>-->
         </section>
 
     </main>
@@ -104,7 +51,7 @@
                     value='Жак-Ив Кусто' required>
                 <input class='popup__input popup__input_occupation' type="text" name="occupation"
                     placeholder="Род деятельности" value="Исследователь океана" required>
-                <button type='submit' class='popup__save' id='saveChanges'>
+                <button type='submit' class='popup__save'>
                     Сохранить
                 </button>
             </form>
@@ -120,7 +67,7 @@
                     required>
                 <input class='popup__input popup__input_link' type="text" name="link" placeholder="Ссылка на картинку"
                     required>
-                <button type='submit' class='popup__save' id='createNewCard'>
+                <button type='submit' class='popup__save'>
                     Создать
                 </button>
             </form>
@@ -128,13 +75,11 @@
     </div>
 
     <div class='popup' id='popupImage'>
-        <div class='popup__image_container'>
-            <div class='popup__image' id='popupImage'>
+            <div class='popup__image'>
                 <button type='button' class='popup__close' id='closeImagePopup'></button>
                 <img class='popup__photo' src='#' alt='фото места'>
-                <p class='popup__image_title'></p>
+                <p class='popup__photo_title'></p>
             </div>
-        </div>
     </div>
 
     <template id="element-template">

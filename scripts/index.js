@@ -151,7 +151,7 @@ function handlePopupImageClose() {
 
 //отображаем карточки из массива
 initialCards.forEach(element => {
-  newCard = createCard(element.name, element.link);
+  const newCard = createCard(element.name, element.link);
   cardsContainer.append(newCard); 
 });
 

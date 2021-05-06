@@ -52,7 +52,7 @@ const placenameInput = document.querySelector('.popup__input_placename');
 const popupImage = document.querySelector('#popupImage');
 const closeImagePopup = document.querySelector('#closeImagePopup');
 const imagePopup = document.querySelector('.popup__photo');
-const captionPopup = document.querySelector('.popup__photo_title');
+const captionPopup = document.querySelector('.popup__caption');
 
 //функция создания карточки
 function createCard(place, link) {
@@ -68,7 +68,7 @@ function createCard(place, link) {
   const cardLikeButton = newCard.querySelector('.element__like');
   cardLikeButton.addEventListener('click', handleCardLike);
 
-  const captionPopup = document.querySelector('.popup__photo_title');
+  const captionPopup = document.querySelector('.popup__caption');
   const cardPhoto = newCard.querySelector('.element__photo');
   cardPhoto.addEventListener('click', function() {
     imagePopup.src = link;

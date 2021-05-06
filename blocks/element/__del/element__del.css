@@ -1,0 +1,10 @@
+.element__del {
+    background: url(../../../images/Trash.svg) no-repeat;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    border: none;
+    background-size: 18px 19.3px;
+    width: 18px;
+    height: 19.3px;
+}

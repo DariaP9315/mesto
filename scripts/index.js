@@ -35,8 +35,8 @@ const popupEdit = document.querySelector('#popupEdit');
 const popupEditButton = document.querySelector('.profile__edit');
 const closeEditButton = document.querySelector('#closeEditPopup');
 const formElementEdit = document.querySelector('#edit-profile');
-const nameInput = document.querySelector('.popup__input_name');
-const jobInput = document.querySelector('.popup__input_occupation');
+const nameInput = document.querySelector('#name');
+const jobInput = document.querySelector('#occupation');
 const profileTitle = document.querySelector('.profile__name');
 const profileSubtitle = document.querySelector('.profile__occupation');
 
@@ -45,14 +45,27 @@ const popupAddButton = document.querySelector('.profile__add');
 const popupAdd = document.querySelector('#popupAdd');
 const closeAddButton = document.querySelector('#closeAddPopup');
 const formElementAdd = document.querySelector('#add-card');
-const imgInput = document.querySelector('.popup__input_link');
-const placenameInput = document.querySelector('.popup__input_placename');
+const imgInput = document.querySelector('#link');
+const placenameInput = document.querySelector('#placename');
 
 //переменные для попап просмотра фотографий
 const popupImage = document.querySelector('#popupImage');
 const closeImagePopup = document.querySelector('#closeImagePopup');
 const imagePopup = document.querySelector('.popup__photo');
 const captionPopup = document.querySelector('.popup__caption');
+
+//запуск валидации
+const config = { 
+  formSelector: '.popup__form', 
+  inputSelector: '.popup__input', 
+  submitButtonSelector: '.popup__save', 
+  inactiveButtonClass: 'popup__save_inactive', 
+  inputErrorClass: 'popup__input_type_error', 
+  errorClass: 'popup__input-error_active' 
+} 
+
+const inputList = Array.from(document.querySelectorAll('.popup__input'));
+const popupAddSubmit = popupAdd.querySelector('.popup__save');
 
 //функция создания карточки
 function createCard(place, link) {
@@ -83,11 +96,29 @@ function createCard(place, link) {
 //функция открытия popup
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByEsc);
 }
 
 //функция закрытия popup
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', closePopupByEsc);
+}
+
+//функция закрытия попап по клику на эскейп
+function closePopupByEsc (evt) {
+  if(evt.key === 'Escape') {
+    const visiblePopup = document.querySelector('.popup_opened');
+    closePopup(visiblePopup);
+  }
+}
+
+//функция закрытия попап по клику на оверлей
+const closePopupOverlay = event => {
+  if (event.target !== event.currentTarget)
+        return;
+    closePopup(event.target);
+  
 }
 
 //функция открытия окна редактирования профиля
@@ -176,4 +207,17 @@ formElementAdd.addEventListener('submit', handleAddFormSubmit);
 //кнопка закрытия попап просмотра фото
 closeImagePopup.addEventListener('click', handlePopupImageClose);
 
+popupEdit.addEventListener('mousedown', closePopupOverlay);
+popupAdd.addEventListener('mousedown', closePopupOverlay);
+popupImage.addEventListener('mousedown', closePopupOverlay);
+
+popupAddButton.addEventListener('click', () => {
+  placenameInput.value = ''; 
+  imgInput.value = '';
+  toggleButtonState(inputList, popupAddSubmit);
+  openPopup(popupAdd); 
+});
+
+ 
+enableValidation(config);
 

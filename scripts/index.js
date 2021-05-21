@@ -64,13 +64,14 @@ const config = {
   errorClass: 'popup__input-error_active' 
 } 
 
-const inputList = Array.from(document.querySelectorAll('.popup__input'));
+const inputList = Array.from(popupAdd.querySelectorAll('.popup__input'));
 const popupAddSubmit = popupAdd.querySelector('.popup__save');
 
 //функция создания карточки
 function createCard(place, link) {
   const newCard = cardTemplate.cloneNode(true);
 
+  const cardPhoto = newCard.querySelector('.element__photo');
   newCard.querySelector('.element__title').textContent = place;
   newCard.querySelector('.element__photo').src = link;
   newCard.querySelector('.element__photo').alt = place;
@@ -82,7 +83,7 @@ function createCard(place, link) {
   cardLikeButton.addEventListener('click', handleCardLike);
 
   const captionPopup = document.querySelector('.popup__caption');
-  const cardPhoto = newCard.querySelector('.element__photo');
+  
   cardPhoto.addEventListener('click', function() {
     imagePopup.src = link;
     imagePopup.alt = `Изображение ` + place;
@@ -102,7 +103,7 @@ function openPopup (popup) {
 //функция закрытия popup
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
-  document.addEventListener('keydown', closePopupByEsc);
+  document.removeEventListener('keydown', closePopupByEsc);
 }
 
 //функция закрытия попап по клику на эскейп
@@ -136,8 +137,7 @@ function handleEditPopupClose() {
 //функция отправки формы редактирования профиля
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
-  const profileTitle = document.querySelector('.profile__name');
-  const profileSubtitle = document.querySelector('.profile__occupation')
+  
 
   profileTitle.textContent = nameInput.value
   profileSubtitle.textContent = jobInput.value
@@ -195,9 +195,6 @@ closeEditButton.addEventListener('click', handleEditPopupClose);
 //кнопка отправки формы редактирования профиля
 formElementEdit.addEventListener('submit', handleEditFormSubmit);
 
-//кнопка добавления карточки
-popupAddButton.addEventListener('click', handleAddPopupOpen);
-
 //кнопка закрытия попап добавления карточки
 closeAddButton.addEventListener('click', handleAddPopupClose);
 
@@ -218,6 +215,4 @@ popupAddButton.addEventListener('click', () => {
   openPopup(popupAdd); 
 });
 
- 
 enableValidation(config);
-

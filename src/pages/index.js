@@ -23,7 +23,7 @@ import {
 
 let userId
 
-const userInfo = new UserInfo('.profile__name', '.profile__occupation', '.profile__avatar_image');
+const userInfo = new UserInfo('.profile__name', '.profile__occupation', '.profile__avatar-image');
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-25',

@@ -38,7 +38,7 @@ export const config = {
 // Находим кнопки
 export const popupAddButton = document.querySelector('.profile__add');
 export const popupEditButton = document.querySelector('.profile__edit');
-export const popupEditAvatarButton = document.querySelector('.profile__avatar_edit');
+export const popupEditAvatarButton = document.querySelector('.profile__avatar-edit');
 
 // Попап редактирования аватара
 export const popupEditAvatar = document.querySelector('#popupAvEdit');

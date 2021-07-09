@@ -7,7 +7,7 @@
     <meta name='description' content='Mesto'>
     <meta name='keywords' content='красивые фотографии'>
     <meta name='author' content='Дарья Попова'>
-    
+
     <title>Mesto</title>
 </head>
 
@@ -21,7 +21,11 @@
 
         <section class='profile'>
             <div class='profile__pasport'>
-                <img class='profile__avatar' src="<%=require('./images/avatar.jpg')%>" alt='аватар пользователя'>
+                <div class='profile__avatar'>
+                    <img class='profile__avatar_image' src="<%=require('./images/avatar.jpg')%>"
+                        alt='аватар пользователя'>
+                    <button type='button' class='profile__avatar_edit'></button>
+                </div>
                 <div class='profile__info'>
                     <div class='profile__title'>
                         <h1 class='profile__name'>Жак-Ив Кусто</h1>
@@ -42,23 +46,54 @@
         <p class='footer__copyright'>&#169; 2021 Mesto Russia</p>
     </footer>
 
+    <div class='popup' id='popupDelete'>
+        <div class='popup__container'>
+            <button type='button' class='popup__close' id='closeDeletePopup'></button>
+            <h2 class='popup__title'>Вы уверены?</h2>
+            <form name='popup-form-delete' class='popup__form' id='delete_card' novalidate>
+                <button type='submit' class='popup__save'>
+                    Да
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class='popup' id='popupAvEdit'>
+        <div class='popup__container'>
+            <button type='button' class='popup__close' id='closeAvEditPopup'></button>
+            <h2 class='popup__title'>Обновить аватар</h2>
+            <form name='popup-form-av' class='popup__form' id='edit_av' novalidate>
+
+                <input id='av_link' class='popup__input' type="url" name="av_link" placeholder="Ссылка на фото" value=''
+                    minlength='2' required>
+                <span class="popup__input-error" id="av_link-error"></span>
+                <button type='submit' class='popup__save'>
+                    Сохранить
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
     <div class='popup' id='popupEdit'>
         <div class='popup__container'>
             <button type='button' class='popup__close' id='closeEditPopup'></button>
             <h2 class='popup__title'>Редактировать профиль</h2>
             <form name='popup-form-edit' class='popup__form' id='edit-profile' novalidate>
-    
+
                 <input id='name' class='popup__input' type="text" name="username" placeholder="Ваше имя"
                     value='Жак-Ив Кусто' minlength='2' maxlength='40' required>
                 <span class="popup__input-error" id="name-error"></span>
-            
-                <input id='occupation' class='popup__input' type="text" name="occupation"
-                    placeholder="Род деятельности" value="Исследователь океана" minlength='2' maxlength='200' required>
+
+                <input id='occupation' class='popup__input' type="text" name="occupation" placeholder="Род деятельности"
+                    value="Исследователь океана" minlength='2' maxlength='200' required>
                 <span class="popup__input-error" id='occupation-error'></span>
                 <button type='submit' class='popup__save'>
                     Сохранить
                 </button>
-            
+
             </form>
         </div>
     </div>
@@ -68,28 +103,27 @@
             <button type='button' class='popup__close' id='closeAddPopup'></button>
             <h2 class='popup__title'>Новое место</h2>
             <form name='popup-form-add' class='popup__form' id='add-card' novalidate>
-                
+
                 <input id='placename' class='popup__input' type="text" name="placename" placeholder="Название"
-                minlength='2' maxlength='30' required>
+                    minlength='2' maxlength='30' required>
                 <span class="popup__input-error" id="placename-error"></span>
-            
-                <input id='link' class='popup__input' type="url" name="link" placeholder="Ссылка на картинку"
-                    required>
+
+                <input id='link' class='popup__input' type="url" name="link" placeholder="Ссылка на картинку" required>
                 <span class="popup__input-error" id="link-error"></span>
                 <button type='submit' class='popup__save'>
                     Создать
                 </button>
-            
+
             </form>
         </div>
     </div>
 
     <div class='popup' id='popupImage'>
-            <div class='popup__image'>
-                <button type='button' class='popup__close' id='closeImagePopup'></button>
-                <img class='popup__photo' src='#' alt='фото места'>
-                <p class='popup__caption'></p>
-            </div>
+        <div class='popup__image'>
+            <button type='button' class='popup__close' id='closeImagePopup'></button>
+            <img class='popup__photo' src='#' alt='фото места'>
+            <p class='popup__caption'></p>
+        </div>
     </div>
 
     <template class='card-template_type_default' id="element-template">
@@ -98,14 +132,13 @@
             <img class='element__photo'>
             <div class='element__info'>
                 <h2 class='element__title'></h2>
-                <button type='button' class='element__like'></button>
+                <div class='element__likes'>
+                    <button type='button' class='element__like'></button>
+                    <p class='element__counter-like'></p>
+                </div>
             </div>
         </div>
     </template>
-
-    
-  
-    
 
 </body>
 

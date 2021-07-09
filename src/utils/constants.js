@@ -1,43 +1,49 @@
 export const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
 ];
 
 // Конфиг валидации
 export const config = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__save_inactive',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_active'
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_inactive',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
 }
 
 // Находим кнопки
 export const popupAddButton = document.querySelector('.profile__add');
 export const popupEditButton = document.querySelector('.profile__edit');
+export const popupEditAvatarButton = document.querySelector('.profile__avatar_edit');
+
+// Попап редактирования аватара
+export const popupEditAvatar = document.querySelector('#popupAvEdit');
+export const closeEditAvatarButton = document.querySelector('#closeAvEditPopup');
+export const formElementEditAvatar = document.querySelector('#edit_av');
 
 // Попап редактирования профиля
 export const popupEdit = document.querySelector('#popupEdit');
@@ -58,6 +64,11 @@ export const closeImagePopup = document.querySelector('#closeImagePopup');
 export const imgInput = document.querySelector('#link');
 export const placenameInput = document.querySelector('#placename');
 export const popupImage = document.querySelector('#popupImage');
+
+// Попап удаления карточки
+export const popupDelete = document.querySelector('#popupDelete');
+export const closeDeletePopup = document.querySelector('#closeDeletePopup');
+export const formElementDelete = document.querySelector('#delete_card');
 
 // Контейнер фото
 export const cardsContainer = document.querySelector('.elements');

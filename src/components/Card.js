@@ -26,7 +26,7 @@ export default class Card {
   }
 
   _likeButtonClick = () => {
-    if (this.photoLikeButton.classList.contains('element__like_active')) {
+    if (this._photoLikeButton.classList.contains('element__like_active')) {
       this._toggleLike(this._cardId, 'DELETE')
     }
     else {
@@ -35,13 +35,13 @@ export default class Card {
   }
 
   updateLikes(likes) {
-    this.photoLikeButton.classList.toggle('element__like_active');
+    this._photoLikeButton.classList.toggle('element__like_active');
     this.newCard.querySelector('.element__counter-like').textContent = likes.length
   }
 
   _setEventListeners() {
-    this.deleteButton = this.newCard.querySelector('.element__del');
-    this.photoLikeButton = this.newCard.querySelector('.element__like');
+    this._deleteButton = this.newCard.querySelector('.element__del');
+    this._photoLikeButton = this.newCard.querySelector('.element__like');
     this.openPopupPhotoButton = this.newCard.querySelector('.element__photo');
     this._markLikes();
     this._checkDeleteAbility();
@@ -49,26 +49,26 @@ export default class Card {
       this._handleCardClick(this.name, this.link);
     });
 
-    this.photoLikeButton.addEventListener('click', this._likeButtonClick);
+    this._photoLikeButton.addEventListener('click', this._likeButtonClick);
 
-    this.deleteButton.addEventListener('click', () => {
+    this._deleteButton.addEventListener('click', () => {
       this._handleDeleteClick(this._cardId);
     });
   }
 
   _markLikes() {
-    let isLiked = this._likes.some(likeOwner => {
+    const isLiked = this._likes.some(likeOwner => {
       return likeOwner._id === this._userId;
     })
 
     if (isLiked) {
-      this.photoLikeButton.classList.toggle('element__like_active');
+      this._photoLikeButton.classList.toggle('element__like_active');
     }
   }
 
   _checkDeleteAbility() {
     if (this._owner._id !== this._userId) {
-      this.deleteButton.classList.add('element__del_hidden')
+      this._deleteButton.classList.add('element__del_hidden')
     }
   }
 
@@ -76,8 +76,8 @@ export default class Card {
     this.newCard = this._getTemplate();
     this._setEventListeners();
     this.newCard.querySelector('.element__title').textContent = this.name;
-    this.newCard.querySelector('.element__photo').src = this.link;
-    this.newCard.querySelector('.element__photo').alt = `${this.name}`;
+    this.openPopupPhotoButton.src = this.link;
+    this.openPopupPhotoButton.alt = `${this.name}`;
     this.newCard.querySelector('.element__counter-like').textContent = this._likes.length;
     return this.newCard;
   }
